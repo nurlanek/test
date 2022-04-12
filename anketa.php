@@ -14,7 +14,7 @@ $pdo = pdo_connect_mysql();
 
 //connect to the database and select the publisher
 
-$sql = 'SELECT poll_id, vertical_id, title FROM poll_answers WHERE vertical_id = 1';
+$sql = 'SELECT poll_id, vertical_id, title, title1 FROM poll_answers WHERE vertical_id = 1';
 
 
 
@@ -49,19 +49,20 @@ $sql = 'SELECT poll_id, vertical_id, title FROM poll_answers WHERE vertical_id =
     <form action="anketa-1.php" method="post" name="">
     
 <?php 
-foreach ($pdo->query($sql) as $row) {
-    print $row['vertical_id'] . "\t";
-    print $row['poll_id'] . "\t";
-    print $row['title'] . "\n";
-}
+// foreach ($pdo->query($sql) as $row) {
+//     print $row['vertical_id'] . "\t";
+//     print $row['poll_id'] . "\t";
+//     print $row['title'] . "\n";
+//     print $row['title1'] . "\n";
+// }
 
 
 foreach ($pdo->query($sql) as $row) {
 ?>
 <?php print $row['poll_id']. "\n"; ?>
-	<input type="radio" id="" name=""><label for="a"><?php print $row['title']. "\n"; ?></label>
+	<input type="radio" id="A" name="<?php print $row['poll_id']. "\n"; ?>"><label for="a"><?php print $row['title']. "\n"; ?></label>
   
-  <input type="radio" id="" name=""><label for="a"><?php print $row['title']. "\n"; ?></label>
+  <input type="radio" id="B" name="<?php print $row['poll_id']. "\n"; ?>"><label for="b"><?php print $row['title1']. "\n"; ?></label>
 
 <br><br>
 <?php 
@@ -69,10 +70,6 @@ foreach ($pdo->query($sql) as $row) {
 ?>
 
 
-
-
-
-   <br><br>
     <input type="submit" name="voteSubmit" class="button" value="Submit">
     
  
