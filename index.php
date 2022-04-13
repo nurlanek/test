@@ -1,15 +1,17 @@
 
 <?php
     //include and initialize Poll class 
-    include 'header.php';
 
+require_once 'header.php';
 ?>
 
 <div class="container">
     <h3>Перед началом тестирования, ответьте пожалуйста на вопросы (все поля обязательны к заполнению)</h3>
-    	<input type="hidden" name="" value="">
+    	
+       
     <form action="index_next.php" method="post" name="">
-    
+     <input type="text" class="hidden" name="spam">
+
     <label>Name </label>
     <input type="Text" name="name" id="name" > <br><br>
     <label>Surename </label>
