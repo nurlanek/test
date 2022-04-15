@@ -12,9 +12,19 @@ $msg = '';
 
 // if (!empty($_POST)) {
 
-     // $poll_id = isset($_POST['poll_id']) ? $_POST['poll_id'] : '';
-     // $title_1 = isset($_POST['title_1']) ? $_POST['title_1'] : '';
-     
+$poll_id = isset($_POST['poll_id']) ? $_POST['poll_id'] : '';
+$title_1 = isset($_POST['title_1']) ? $_POST['title_1'] : '';
+$title_2 = isset($_POST['title_2']) ? $_POST['title_2'] : '';
+$title_3 = isset($_POST['title_3']) ? $_POST['title_3'] : '';
+$title_4 = isset($_POST['title_4']) ? $_POST['title_4'] : '';     
+$title_5 = isset($_POST['title_5']) ? $_POST['title_5'] : '';
+$title_6 = isset($_POST['title_6']) ? $_POST['title_6'] : '';
+$title_7 = isset($_POST['title_7']) ? $_POST['title_7'] : '';
+$title_8 = isset($_POST['title_8']) ? $_POST['title_8'] : '';
+$title_9 = isset($_POST['title_9']) ? $_POST['title_9'] : '';
+$title_10 = isset($_POST['title_10']) ? $_POST['title_10'] : '';
+
+
 //     // Insert new record into the "polls" table
 //     $stmt = $pdo->prepare('INSERT INTO answers VALUES (NULL, ?, ?)');
 
@@ -30,7 +40,7 @@ $msg = '';
 // }
 
 print ("poll_id: " . $_POST['poll_id'] . ".<br>\n");
-print (" Ваше имя: " . $_POST['title_1'] . ".<br>\n");
+print ("title_1: " . $_POST['title_2'] . ".<br>\n");
 
 
 ?>
@@ -42,6 +52,7 @@ print (" Ваше имя: " . $_POST['title_1'] . ".<br>\n");
 
 
     echo $_COOKIE['Test'];
+        echo $_POST['title_1'];
     ?>
 
     <a href ="anketa.php?vertical_id=1">начать тест</a>

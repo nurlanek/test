@@ -13,34 +13,17 @@ $sql = 'SELECT poll_id, vertical_id, title, title1, horizontal_id FROM poll_answ
 ?>
 <div class="container">
     <h3>Выберите профессию</h3>
- 
-<!--     <script>
-// Should only be triggered on first page load
-console.log('ho');
 
-window.addEventListener("load", function() {
-  document.getElementById('my-form').addEventListener("submit", function(e) {
-    e.preventDefault(); // before the code
-    /* do what you want with the form */
 
-    // Should be triggered on form submit
-    console.log('hi');
-  })
-});
-
-    </script>
- -->
-
-<form action="anketa_next.php" method="post" name="" id="my-form">
+<form action="anketa_func.php" method="post" >
 <?php
 
 foreach ($pdo->query($sql) as $row) {
 ?>
 
-    <input type="hidden" name="poll_id" value="<?php print $row['poll_id']. "\n"; ?>"> 
+<input type="hidden" name="poll_id[]" value="<?php print $row['poll_id']. "\n"; ?>"> 
 
 <?php print $row['poll_id']. "\n"; ?>
-
 
 	<input type="radio" id="1" name="title_<?php print $row['horizontal_id']. "\n"; ?>" value="1">
   <label for="a"><?php print $row['title']. "\n"; ?></label>
